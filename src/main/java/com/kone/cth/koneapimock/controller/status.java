@@ -14,7 +14,7 @@ import java.util.Map;
 public class status {
 
 
-    @RequestMapping(path = "/status", produces = {"application/json", "application/xml"}, method = RequestMethod.GET)
+    @RequestMapping(path = "/status",  method = RequestMethod.GET)
     public ResponseEntity<Map<String, String>> greeting() {
 
         Map<String, String> status = new HashMap<>();

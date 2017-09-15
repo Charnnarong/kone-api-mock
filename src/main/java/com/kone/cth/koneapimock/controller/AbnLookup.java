@@ -12,7 +12,7 @@ import java.util.Map;
 public class AbnLookup {
 
 
-    @RequestMapping(path = "/lookup", produces = {"application/json", "application/xml"}, method = RequestMethod.GET)
+    @RequestMapping(path = "/lookup", method = RequestMethod.GET)
     public @ResponseBody
     AaspireAbn lookup(@RequestParam("abn") String abn) {
 
