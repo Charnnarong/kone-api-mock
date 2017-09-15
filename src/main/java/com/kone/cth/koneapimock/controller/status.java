@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class status {
 
 
-    @RequestMapping(value = "/status", produces = {"application/json", "application/xml"}, method = RequestMethod.GET)
+    @RequestMapping(path = "/status", produces = {"application/json", "application/xml"}, method = RequestMethod.GET)
     public String greeting() {
         return "{\"status\": \"OK\"}";
     }
