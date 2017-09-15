@@ -8,5 +8,6 @@ public class KoneApiMockApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(KoneApiMockApplication.class, args);
+
 	}
 }
