@@ -21,9 +21,9 @@ public class AbnLookup {
             return aaspireAbn;
         }
 
-        aaspireAbn.setId("mock-id-value-12345");
-        aaspireAbn.setDivision("mock-division-value");
-        aaspireAbn.setTrading_name("mock-trading_name-value");
+        aaspireAbn.setId("mock-id-value-" + abn);
+        aaspireAbn.setDivision("mock-division-" + abn);
+        aaspireAbn.setTrading_name("mock-trading_name-" + abn);
 
         return aaspireAbn;
     }
