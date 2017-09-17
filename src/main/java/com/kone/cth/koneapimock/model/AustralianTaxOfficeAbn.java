@@ -11,6 +11,10 @@ public class AustralianTaxOfficeAbn {
         return abn;
     }
 
+    public void setTrading_name(String trading_name) {
+        this.trading_name = trading_name;
+    }
+
     public void setAbn(String abn) {
         this.abn = abn;
     }
