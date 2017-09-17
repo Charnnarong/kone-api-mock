@@ -1,9 +1,13 @@
 package com.kone.cth.koneapimock.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Employer {
 
     private String id;
     private String trading_name;
+
+    @JsonProperty("classification")
     private EmployersClassification employersClassification;
 
 
