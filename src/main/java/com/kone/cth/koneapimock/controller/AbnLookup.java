@@ -17,7 +17,7 @@ public class AbnLookup {
     AaspireAbn lookup(@RequestParam("abn") String abn) {
 
         AaspireAbn aaspireAbn = new AaspireAbn();
-        if( abn.isEmpty() || abn.contains("NotFound")){
+        if( abn.isEmpty() || abn.contains("NotFoundInABN")){
             return aaspireAbn;
         }
 

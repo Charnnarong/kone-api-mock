@@ -12,7 +12,7 @@ public class AustralianTaxOffice {
     AustralianTaxOfficeAbn lookup(@RequestParam("abn") String abn) {
 
         AustralianTaxOfficeAbn aaspireAbn = new AustralianTaxOfficeAbn();
-        if( abn.isEmpty() || abn.contains("NotFound")){
+        if( abn.isEmpty() || abn.contains("NotFoundInATO")){
             return aaspireAbn;
         }
 
