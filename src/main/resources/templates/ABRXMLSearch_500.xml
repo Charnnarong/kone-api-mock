@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ABRPayloadSearchResults xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://abr.business.gov.au/ABRXMLSearch/">
+    <request>
+        <identifierSearchRequest>
+            <authenticationGUID>$authenticationGUID</authenticationGUID>
+            <identifierType>$identifierType</identifierType>
+            <identifierValue>$identifierValue</identifierValue>
+            <history>$history</history>
+        </identifierSearchRequest>
+    </request>
+    <response>
+        <exception>
+            <exceptionDescription>$exceptionDescription</exceptionDescription>
+            <exceptionCode>$exceptionCode</exceptionCode>
+        </exception>
+    </response>
+</ABRPayloadSearchResults>

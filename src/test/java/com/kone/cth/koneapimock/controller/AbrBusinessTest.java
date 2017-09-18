@@ -29,7 +29,7 @@ public class AbrBusinessTest {
     private TestRestTemplate restTemplate;
 
     @Test
-    public void lookup() throws Exception {
+    public void lookup_expected_404() throws Exception {
 
         MultiValueMap<String, Object> map = new LinkedMultiValueMap<String, Object>();
         map.add("Accept", "text/xml");
@@ -43,9 +43,9 @@ public class AbrBusinessTest {
         form.put("authenticationGuid","123456-abcdef-789-ghijkl");
 
         ResponseEntity<String> response = this.restTemplate
-                .postForEntity("/abrxmlsearch/AbrXmlSearch.asmx/SearchByABNv201408?searchString=1234&includeHistoricalDetails=N&authenticationGuid=656d30dd-31ff-4fda-8322-858e9d0b1bd9", map,String.class);
+                .postForEntity("/abrxmlsearch/AbrXmlSearch.asmx/SearchByABNv201408?searchString=1234EXPECTED_404&includeHistoricalDetails=N&authenticationGuid=656d30dd-31ff-4fda-8322-858e9d0b1bd9", map,String.class);
 
-        File responseExpectedFile = new ClassPathResource("AbrXmlSearchResult.xml").getFile();
+        File responseExpectedFile = new ClassPathResource("AbrXmlSearchResult_404.xml").getFile();
         String responseExpected = new String(Files.readAllBytes(responseExpectedFile.toPath()));
 
         XMLUnit.setIgnoreAttributeOrder(true);

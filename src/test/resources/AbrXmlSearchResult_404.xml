@@ -6,7 +6,7 @@
         <identifierSearchRequest>
             <authenticationGUID>656d30dd-31ff-4fda-8322-858e9d0b1bd9</authenticationGUID>
             <identifierType>ABN</identifierType>
-            <identifierValue>1234</identifierValue>
+            <identifierValue>1234EXPECTED_404</identifierValue>
             <history>N</history>
         </identifierSearchRequest>
     </request>
