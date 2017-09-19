@@ -3,6 +3,8 @@ package com.kone.cth.koneapimock.controller;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,6 +15,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 
 @RestController
 public class AbrBusiness {
@@ -22,6 +25,9 @@ public class AbrBusiness {
                                          @RequestParam("includeHistoricalDetails") String includeHistoricalDetails,
                                          @RequestParam("authenticationGuid") String authenticationGuid) throws IOException {
 
+        MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+        headers.set("Content-Type","text/xml");
+
         String responseXml = "";
         ResponseEntity<String> responseEntity = null;
         if (searchString.contains("EXPECTED_500")) {
@@ -30,6 +36,7 @@ public class AbrBusiness {
         } else if (searchString.contains("EXPECTED_404")) {
             responseXml = generate404Response(searchString, includeHistoricalDetails, authenticationGuid);
             responseEntity = new ResponseEntity<>(responseXml, HttpStatus.NOT_FOUND);
+
         } else {
             responseXml = generate200Response(searchString, includeHistoricalDetails, authenticationGuid);
             responseEntity = new ResponseEntity<>(responseXml, HttpStatus.OK);
@@ -43,6 +50,7 @@ public class AbrBusiness {
         String contents = getContents("templates/ABRXMLSearch_200.xml");
 
         contents = generateCommonResponse(searchString, includeHistoricalDetails, authenticationGuid, contents);
+        contents = contents.replace("$usageStatement", "mock-usage-value-" + searchString);
 
         return contents;
     }
