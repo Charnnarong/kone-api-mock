@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Employer {
 
-    private String id;
-    private String trading_name;
+    private String id = "";
+    private String trading_name = "";
 
     public Employer() {
     }

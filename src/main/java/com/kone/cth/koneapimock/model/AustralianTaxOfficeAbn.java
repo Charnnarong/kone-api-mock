@@ -1,8 +1,8 @@
 package com.kone.cth.koneapimock.model;
 
 public class AustralianTaxOfficeAbn {
-    private String abn;
-    private String trading_name;
+    private String abn = "";
+    private String trading_name = "";
 
     public AustralianTaxOfficeAbn() {
     }

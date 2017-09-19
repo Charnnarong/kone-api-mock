@@ -2,7 +2,7 @@ package com.kone.cth.koneapimock.model;
 
 public class EmployersClassification {
 
-    private String division;
+    private String division = "";
 
     public String getDivision() {
         return division;

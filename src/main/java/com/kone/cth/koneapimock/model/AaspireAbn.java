@@ -2,9 +2,9 @@ package com.kone.cth.koneapimock.model;
 
 public class AaspireAbn {
 
-    private String id;
-    private String trading_name;
-    private String division;
+    private String id = "";
+    private String trading_name = "";
+    private String division = "";
 
     public AaspireAbn() {
     }
