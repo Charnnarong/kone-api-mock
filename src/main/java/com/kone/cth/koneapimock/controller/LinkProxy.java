@@ -5,6 +5,8 @@ import com.kone.cth.koneapimock.model.Employer;
 import com.kone.cth.koneapimock.model.EmployersClassification;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/employer/plans")
 public class LinkProxy {
@@ -21,7 +23,6 @@ public class LinkProxy {
         employer.setId("mock-id-value-" + planCode);
         EmployersClassification employersClassification =  new EmployersClassification();
         employersClassification.setDivision("mock-division-" + planCode);
-        employer.setEmployersClassification(employersClassification);
         employer.setTrading_name("mock-trading_name-" + planCode);
 
         return employer;

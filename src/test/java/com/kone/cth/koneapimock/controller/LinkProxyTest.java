@@ -23,7 +23,7 @@ public class LinkProxyTest {
         ResponseEntity<String> response = this.restTemplate
                 .getForEntity("/employer/plans/planCode-mock/employers", String.class);
 
-        assertThat(response.getBody()).contains("mock-division-planCode-mock");
+        assertThat(response.getBody()).contains("mock-trading_name-planCode-mock");
     }
 
     @Test

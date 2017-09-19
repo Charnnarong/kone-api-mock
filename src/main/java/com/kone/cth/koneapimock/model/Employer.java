@@ -7,10 +7,6 @@ public class Employer {
     private String id;
     private String trading_name;
 
-    @JsonProperty("classification")
-    private EmployersClassification employersClassification;
-
-
     public Employer() {
     }
 
@@ -30,11 +26,5 @@ public class Employer {
         this.trading_name = trading_name;
     }
 
-    public EmployersClassification getEmployersClassification() {
-        return employersClassification;
-    }
 
-    public void setEmployersClassification(EmployersClassification employersClassification) {
-        this.employersClassification = employersClassification;
-    }
 }
