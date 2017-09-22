@@ -26,8 +26,17 @@ public class EmployersService {
         if( abn.isEmpty() || abn.contains("ABN_EXPECTED_404")){
             return  new ResponseEntity(HttpStatus.NOT_FOUND);
         }
-        if( abn.isEmpty() || abn.contains("ABN_EXPECTED_500")){
-            return  new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        if( abn.isEmpty() || abn.contains("ABN_EXPECTED_401")){
+            return  new ResponseEntity(HttpStatus.UNAUTHORIZED);
+        }
+        if( abn.isEmpty() || abn.contains("ABN_EXPECTED_403")){
+            return  new ResponseEntity(HttpStatus.FORBIDDEN);
+        }
+        if( abn.isEmpty() || abn.contains("ABN_EXPECTED_429")){
+            return  new ResponseEntity(HttpStatus.TOO_MANY_REQUESTS);
+        }
+        if( abn.isEmpty() || abn.contains("ABN_EXPECTED_503")){
+            return  new ResponseEntity(HttpStatus.SERVICE_UNAVAILABLE);
         }
 
         employer.setId("1234");
