@@ -23,7 +23,8 @@ public class EmployersService {
 
 
         EmployersServiceResponse employer = new EmployersServiceResponse();
-        if( abn.isEmpty() || abn.contains("ABN.EXPECTED_404")){
+        System.out.println("ccmk abn: " + abn);
+        if( abn.isEmpty() || abn.contains("ABN_EXPECTED_404")){
             return  new ResponseEntity(HttpStatus.NOT_FOUND);
         }
 
