@@ -9,8 +9,69 @@
         </identifierSearchRequest>
     </request>
     <response>
-        <usageStatement>$usageStatement</usageStatement>
-        <dateRegisterLastUpdated>$dateRegisterLastUpdated</dateRegisterLastUpdated>
-        <dateTimeRetrieved>$dateTimeRetrieved</dateTimeRetrieved>
+        <usageStatement>The Registrar of the ABR monitors the quality of the information available on this website and updates the information regularly. However, neither the Registrar of the ABR nor the Commonwealth guarantee that the information available through this service (including search results) is accurate, up to date, complete or accept any liability arising from the use of or reliance upon this site.</usageStatement>
+        <dateRegisterLastUpdated>2017-09-13</dateRegisterLastUpdated>
+        <dateTimeRetrieved>2017-09-13T14:01:52.3078019+10:00</dateTimeRetrieved>
+        <businessEntity201408>
+            <recordLastUpdatedDate>2017-04-11</recordLastUpdatedDate>
+            <ABN>
+                <identifierValue>65714394898</identifierValue>
+                <isCurrentIndicator>Y</isCurrentIndicator>
+                <replacedFrom>0001-01-01</replacedFrom>
+            </ABN>
+            <entityStatus>
+                <entityStatusCode>Active</entityStatusCode>
+                <effectiveFrom>1999-11-01</effectiveFrom>
+                <effectiveTo>0001-01-01</effectiveTo>
+            </entityStatus>
+            <ASICNumber />
+            <entityType>
+                <entityTypeCode>POF</entityTypeCode>
+                <entityDescription>APRA Regulated Public Offer Fund</entityDescription>
+            </entityType>
+            <goodsAndServicesTax>
+                <effectiveFrom>2000-07-01</effectiveFrom>
+                <effectiveTo>0001-01-01</effectiveTo>
+            </goodsAndServicesTax>
+            <mainName>
+                <organisationName>The Trustee for AUSTRALIANSUPER</organisationName>
+                <effectiveFrom>2009-04-09</effectiveFrom>
+            </mainName>
+            <mainTradingName>
+                <organisationName>AUSTRALIANSUPER</organisationName>
+                <effectiveFrom>2006-11-23</effectiveFrom>
+            </mainTradingName>
+            <otherTradingName>
+                <organisationName>corporate mercer</organisationName>
+                <effectiveFrom>2008-12-12</effectiveFrom>
+            </otherTradingName>
+            <otherTradingName>
+                <organisationName>SAPL</organisationName>
+                <effectiveFrom>2004-01-13</effectiveFrom>
+            </otherTradingName>
+            <otherTradingName>
+                <organisationName>SAVINGS AUSTRALIA</organisationName>
+                <effectiveFrom>2004-01-13</effectiveFrom>
+            </otherTradingName>
+            <mainBusinessPhysicalAddress>
+                <stateCode>VIC</stateCode>
+                <postcode>3000</postcode>
+                <effectiveFrom>2015-10-29</effectiveFrom>
+                <effectiveTo>0001-01-01</effectiveTo>
+            </mainBusinessPhysicalAddress>
+            <superannuationStatus>
+                <complyingCode>APRA</complyingCode>
+                <complyingDescription>APRA Registered</complyingDescription>
+                <regulator>APRAREGULATED</regulator>
+            </superannuationStatus>
+            <mainPostalPhysicalAddress>
+                <stateCode>VIC</stateCode>
+                <postcode>3000</postcode>
+                <addressLine1>Level 33</addressLine1>
+                <addressLine2>50 Lonsdale St</addressLine2>
+                <suburb>MELBOURNE</suburb>
+                <countryName />
+            </mainPostalPhysicalAddress>
+        </businessEntity201408>
     </response>
 </ABRPayloadSearchResults>
