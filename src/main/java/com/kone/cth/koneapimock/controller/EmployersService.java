@@ -23,9 +23,11 @@ public class EmployersService {
 
 
         EmployersServiceResponse employer = new EmployersServiceResponse();
-        System.out.println("ccmk abn: " + abn);
         if( abn.isEmpty() || abn.contains("ABN_EXPECTED_404")){
             return  new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
+        if( abn.isEmpty() || abn.contains("ABN_EXPECTED_500")){
+            return  new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
         employer.setId("1234");
