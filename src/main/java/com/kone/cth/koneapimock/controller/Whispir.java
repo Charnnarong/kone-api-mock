@@ -13,10 +13,10 @@ public class Whispir {
 
     private static final String MOCK = "mock";
     @PostMapping(path = "/message")
-    public ResponseEntity<Object> message(@RequestParam("Accept") String accept,
-                                          @RequestParam("Authorization") String auth,
-                                          @RequestParam("Content-Type") String contentType,
-                                          @RequestParam( name = MOCK , required = false) String mock,
+    public ResponseEntity<String> message(@RequestHeader("accept") String accept,
+                                          @RequestHeader("Authorization") String auth,
+                                          @RequestHeader("Content-Type") String contentType,
+                                          @RequestHeader( name = MOCK , required = false) String mock,
                                           @RequestBody Map<String,Object> payload){
 
         if(StringUtils.isEmpty(mock)){
