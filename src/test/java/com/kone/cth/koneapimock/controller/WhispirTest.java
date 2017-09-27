@@ -45,6 +45,24 @@ public class WhispirTest {
     }
 
     @Test
+    public void message_202_workspace() throws Exception {
+
+        MultiValueMap<String, Object> map = new LinkedMultiValueMap<String, Object>();
+        map.add("Accept", "application/vnd.whispir.message-v1+json");
+        map.add("Authorization", "Basic 123456");
+        map.add("Content-Type", "application/vnd.whispir.message-v1+json");
+
+        File requestPayloadFile = new ClassPathResource("Whispir/RequestSendEmail.json").getFile();
+        String requestPayload = new String(Files.readAllBytes(requestPayloadFile.toPath()));
+
+        ResponseEntity<String> response = this.restTemplate
+                .postForEntity("/whispir/dddd?apikey=12345", requestPayload,String.class);
+
+        assertThat(response.getStatusCode().equals(HttpStatus.ACCEPTED));
+    }
+
+
+    @Test
     public void message_400() throws Exception {
 
         MultiValueMap<String, Object> map = new LinkedMultiValueMap<String, Object>();

@@ -13,12 +13,12 @@ import java.net.URISyntaxException;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/whispir")
+@RequestMapping("/whispir/*")
 public class Whispir {
 
     private static final String MOCK = "mock";
 
-    @PostMapping(path = {"/messages", "/workspaces"})
+    @PostMapping(path = {"messages", "workspaces/*"})
     public ResponseEntity<String> message(@RequestHeader("accept") String accept,
                                           @RequestHeader("Authorization") String auth,
                                           @RequestHeader("Content-Type") String contentType,
