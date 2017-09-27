@@ -1,5 +1,6 @@
 package com.kone.cth.koneapimock.controller;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
@@ -7,6 +8,8 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Map;
 
 @RestController
@@ -20,12 +23,16 @@ public class Whispir {
                                           @RequestHeader("Authorization") String auth,
                                           @RequestHeader("Content-Type") String contentType,
                                           @RequestHeader(name = MOCK, required = false) String mock,
-                                          @RequestBody Map<String, Object> payload) {
+                                          @RequestBody Map<String, Object> payload) throws URISyntaxException {
+
+        URI location = new URI("https://api.whispir.com/messages/123_mock_message_id?apikey=123_mock_apikey");
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.setLocation(location);
+        responseHeaders.add("Location", "https://api.whispir.com/messages/123_mock_message_id?apikey=123_mock_apikey");
 
         if (StringUtils.isEmpty(mock)) {
-            ResponseEntity x = new ResponseEntity("Your request has been accepted for processing.", HttpStatus.ACCEPTED);
-            x.getHeaders().add("Location", "https://api.whispir.com/messages/123_mock_message_id?apikey=123_mock_apikey");
-            return x;
+
+            return new ResponseEntity<>("Your request has been accepted for processing.",responseHeaders, HttpStatus.ACCEPTED);
         }
 
         if (mock.contains("EXPECTED_400")) {
