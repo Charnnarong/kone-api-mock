@@ -41,7 +41,9 @@ public class WhispirTest {
         ResponseEntity<String> response = this.restTemplate
                 .postForEntity("/whispir/messages?apikey=12345", requestPayload,String.class);
 
+        System.out.println("ccmk : " + response.getHeaders().toSingleValueMap().toString());
         assertThat(response.getStatusCode().equals(HttpStatus.ACCEPTED));
+//        assertThat(response.getHeaders().toSingleValueMap().get("Location").toString().equals("https://api.whispir.com/messages/123_mock_message_id?apikey=123_mock_apikey"));
     }
 
     @Test
