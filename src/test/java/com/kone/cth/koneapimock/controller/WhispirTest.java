@@ -39,7 +39,7 @@ public class WhispirTest {
         String requestPayload = new String(Files.readAllBytes(requestPayloadFile.toPath()));
 
         ResponseEntity<String> response = this.restTemplate
-                .postForEntity("/whispir/message?apikey=12345", requestPayload,String.class);
+                .postForEntity("/whispir/messages?apikey=12345", requestPayload,String.class);
 
         assertThat(response.getStatusCode().equals(HttpStatus.ACCEPTED));
     }
@@ -57,7 +57,7 @@ public class WhispirTest {
         String requestPayload = new String(Files.readAllBytes(requestPayloadFile.toPath()));
 
         ResponseEntity<String> response = this.restTemplate
-                .postForEntity("/whispir/message?apikey=12345", requestPayload,String.class);
+                .postForEntity("/whispir/messages?apikey=12345", requestPayload,String.class);
 
         assertThat(response.getStatusCode().equals(HttpStatus.BAD_REQUEST));
     }
@@ -75,7 +75,7 @@ public class WhispirTest {
         String requestPayload = new String(Files.readAllBytes(requestPayloadFile.toPath()));
 
         ResponseEntity<String> response = this.restTemplate
-                .postForEntity("/whispir/message?apikey=12345", requestPayload,String.class);
+                .postForEntity("/whispir/messages?apikey=12345", requestPayload,String.class);
 
         assertThat(response == null);
     }

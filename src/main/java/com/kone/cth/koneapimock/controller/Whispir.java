@@ -12,7 +12,7 @@ import java.util.Map;
 public class Whispir {
 
     private static final String MOCK = "mock";
-    @PostMapping(path = "/message")
+    @PostMapping(path = "/messages")
     public ResponseEntity<String> message(@RequestHeader("accept") String accept,
                                           @RequestHeader("Authorization") String auth,
                                           @RequestHeader("Content-Type") String contentType,
