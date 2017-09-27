@@ -28,7 +28,6 @@ public class Whispir {
         URI location = new URI("https://api.whispir.com/messages/123_mock_message_id?apikey=123_mock_apikey");
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.setLocation(location);
-        responseHeaders.add("Location", "https://api.whispir.com/messages/123_mock_message_id?apikey=123_mock_apikey");
 
         if (StringUtils.isEmpty(mock)) {
 
