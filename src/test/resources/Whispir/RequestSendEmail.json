@@ -1,0 +1,18 @@
+{
+  "to": "Kone.Cth@Kone.com",
+  "subject": "Test e-mail message with attachment",
+  "email": {
+    "body": "This is my content",
+    "footer": "Email signature goes here.",
+    "type": "text/plain",
+    "resource": {
+      "attachment": [
+        {
+          "attachment_name": "TestIcon.png",
+          "attachment_desc": "TestIcon.png",
+          "deref_uri": "Testing 123"
+        }
+      ]
+    }
+  }
+}
