@@ -24,7 +24,7 @@ public class AwpRegistration {
         if (StringUtils.isEmpty(mock)) {
 
             return new ResponseEntity<>("{\n" +
-                    "    \"Username\": \"mock-user\",\n" +
+                    "    \"Username\": \"mock-user-for-usernameallowed\",\n" +
                     "\t\"Status\" : \"registered\"\n" +
                     "}\n", HttpStatus.OK);
         }
@@ -41,7 +41,7 @@ public class AwpRegistration {
         if (StringUtils.isEmpty(mock)) {
 
             return new ResponseEntity<>("{\n" +
-                    "    \"Username\": \"djkite\",\n" +
+                    "    \"Username\": \"mock-user-for-createportaluser\",\n" +
                     "\t\"Status\" : \"created portaluser\"\n" +
                     "}\n", HttpStatus.OK);
         }
