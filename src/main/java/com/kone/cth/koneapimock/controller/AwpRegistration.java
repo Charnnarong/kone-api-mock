@@ -1,11 +1,8 @@
 package com.kone.cth.koneapimock.controller;
 
-import ch.qos.logback.core.joran.spi.ActionException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,27 +11,46 @@ import java.net.URISyntaxException;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/whispir/*")
-public class Whispir {
+@RequestMapping("/awpregistration/*")
+public class AwpRegistration {
 
     private static final String MOCK = "mock";
 
-    @PostMapping(path = {"messages", "workspaces/*"})
-    public ResponseEntity<String> message(@RequestHeader("accept") String accept,
-                                          @RequestHeader("Authorization") String auth,
-                                          @RequestHeader("Content-Type") String contentType,
-                                          @RequestHeader(name = MOCK, required = false) String mock,
-                                          @RequestBody Map<String, Object> payload) throws URISyntaxException, ActionException {
+    @PostMapping("usernameallowed")
+    public ResponseEntity<String> usernameallowed(@RequestHeader(name = MOCK, required = false) String mock,
+                                          @RequestBody Map<String, Object> payload) throws URISyntaxException, Whispir.ActionException {
 
-        URI location = new URI("https://api.whispir.com/messages/123_mock_message_id?apikey=123_mock_apikey");
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.setLocation(location);
 
         if (StringUtils.isEmpty(mock)) {
 
-            return new ResponseEntity<>("Your request has been accepted for processing.",responseHeaders, HttpStatus.ACCEPTED);
+            return new ResponseEntity<>("{\n" +
+                    "    \"Username\": \"mock-user\",\n" +
+                    "\t\"Status\" : \"registered\"\n" +
+                    "}\n", HttpStatus.OK);
         }
 
+        return generateErrorResponse(mock);
+
+    }
+
+    @PostMapping("createportaluser")
+    public ResponseEntity<String> createportaluser(@RequestHeader(name = MOCK, required = false) String mock,
+                                          @RequestBody Map<String, Object> payload) throws URISyntaxException, Whispir.ActionException {
+
+
+        if (StringUtils.isEmpty(mock)) {
+
+            return new ResponseEntity<>("{\n" +
+                    "    \"Username\": \"djkite\",\n" +
+                    "\t\"Status\" : \"created portaluser\"\n" +
+                    "}\n", HttpStatus.OK);
+        }
+
+        return generateErrorResponse(mock);
+
+    }
+
+    private ResponseEntity<String> generateErrorResponse(@RequestHeader(name = MOCK, required = false) String mock) {
         if (mock.contains("EXPECTED_400")) {
             return new ResponseEntity("400", HttpStatus.BAD_REQUEST);
         }
@@ -60,7 +76,7 @@ public class Whispir {
         }
 
         if (mock.contains("EXPECTED_422)")) {
-            throw new ActionException();
+            throw new Whispir.ActionException();
         }
         if (mock.contains("EXPECTED_429")) {
             return new ResponseEntity("429", HttpStatus.TOO_MANY_REQUESTS);
@@ -68,11 +84,8 @@ public class Whispir {
         if (mock.contains("EXPECTED_503")) {
             return new ResponseEntity("503", HttpStatus.SERVICE_UNAVAILABLE);
         }
-
         return null;
-
     }
 
-    @ResponseStatus(value = HttpStatus.UNPROCESSABLE_ENTITY, reason = "nope")
-    public static class ActionException extends RuntimeException {}
+
 }
