@@ -24,9 +24,9 @@ public class AwpRegistration {
         if (StringUtils.isEmpty(mock)) {
 
             return new ResponseEntity<>("{\n" +
-                    "    \"Username\": \"mock-user-for-usernameallowed\",\n" +
-                    "\t\"Status\" : \"registered\"\n" +
-                    "}\n", HttpStatus.OK);
+                    "  \"MemberNumberAlreadyUsed\":\"True\",\n" +
+                    "  \"Message\":\"\"\n" +
+                    "}", HttpStatus.OK);
         }
 
         return generateErrorResponse(mock);
@@ -41,9 +41,9 @@ public class AwpRegistration {
         if (StringUtils.isEmpty(mock)) {
 
             return new ResponseEntity<>("{\n" +
-                    "    \"Username\": \"mock-user-for-createportaluser\",\n" +
-                    "\t\"Status\" : \"created portaluser\"\n" +
-                    "}\n", HttpStatus.OK);
+                    "  \"Success\":\"True\",\n" +
+                    "  \"Message\":\"\"\n" +
+                    "}", HttpStatus.OK);
         }
 
         return generateErrorResponse(mock);
