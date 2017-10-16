@@ -52,11 +52,17 @@ public class AwpRegistration {
 
     private ResponseEntity<String> generateErrorResponse(@RequestHeader(name = MOCK, required = false) String mock) {
         if (mock.contains("EXPECTED_400")) {
-            return new ResponseEntity("400", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity("{  \n" +
+                    "  \"ErrorCode\":\"400\",\n" +
+                    "  \"Error\":\"Error Message\"\n" +
+                    "}", HttpStatus.BAD_REQUEST);
         }
 
         if (mock.contains("EXPECTED_500")) {
-            return new ResponseEntity("500", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity("{  \n" +
+                    "  \"ErrorCode\":\"500\",\n" +
+                    "  \"Error\":\"The server encountered an internal error and was unable to complete your request\"\n" +
+                    "}", HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
         if (mock.contains("EXPECTED_401")) {
